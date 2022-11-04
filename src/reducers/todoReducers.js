@@ -25,7 +25,6 @@ const todoReducers = (state=initialData, action) =>{
 
         break;
        
-
     case "DELETE_TODO":
         
         const list = state.list.filter((elem) => elem.id !== action.id)
@@ -38,18 +37,23 @@ const todoReducers = (state=initialData, action) =>{
     break;
 
     case "EDIT_TODO":
-         
-        const text = state.list.map(li => {
-            console.log('id', action.id)
-            if(li.id === action.id){
-                return{
-                    ...state,
-                     text
-                };
-            }
-        });
-
         
+        const text = state.list.filter((elem) => elem.id !== action.id)
+
+        return{
+            ...state,
+            text
+        }
+
+        // const text = state.list.map(li => {
+        //     //console.log('id', action.id)
+        //     if(li.id === action.id){
+        //         return{
+        //             ...state,
+        //              text
+        //         };
+        //     }
+        // });
 
         default: 
         return state;

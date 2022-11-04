@@ -1,20 +1,22 @@
-import {useSelector, useDispatch} from 'react-redux'
-import { editTodo } from '../actions';
+// import {useSelector, useDispatch} from 'react-redux'
+// import { editTodo } from '../actions';
 
 
-const EditTodoComponent = ({inputData, elemId}) => {
+// const EditTodoComponent = ({inputData, elem}) => {
 
-    // console.log('editTodoComponent',inputData)
+//     // console.log('editTodoComponent',inputData)
 
-    const dispatch = useDispatch();
+//     const dispatch = useDispatch();
 
-    return <div>
-        <button onClick={()=>dispatch(editTodo(elemId))}>edit</button>
-    </div>
-}
+//     return (
+//     <div>
+//         <button onClick={()=>dispatch(editTodo(elem.id))}>edit</button>
+//     </div>
+//     );
+// }
 
 
 
 
 
-export default EditTodoComponent;
+// export default EditTodoComponent;

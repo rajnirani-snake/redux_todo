@@ -5,6 +5,7 @@ import ComponentSubmit from './ComponentSubmit';
 import './Todo.css'
 
 function Todo() {
+
    
     return (
       <div>
@@ -14,7 +15,9 @@ function Todo() {
             <figure>
               <figcaption>ADD TODO LIST</figcaption>
             </figure>
-            <ComponentSubmit/>
+            
+            <ComponentSubmit />
+            
           </div>
         </div>
       </div>

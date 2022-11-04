@@ -18,10 +18,14 @@ export const deleteTodo = (id) => {
     }
 }
 
-export  const editTodo = (id) =>{
+export  const editTodo = (data) =>{
     return {
         type:"EDIT_TODO",
-        id:id
+        payload:{
+            id: new Date().getTime().toString(),
+            data:data
+            
+        }
     }
 }
 
