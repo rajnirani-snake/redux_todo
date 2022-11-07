@@ -7,10 +7,15 @@ import './Todo.css';
 
 
 function ComponentSubmit() {
+
+   
    
     const [inputData, setinputData] = useState('');
+    //  const[todoEditing, setTodoEditing] = useState(null)
+    const[editingText, setEditingText] = useState(" ")
     const list = useSelector((state)=> state.todoReducers.list);
     const dispatch = useDispatch();
+
 
     return (
        
@@ -22,20 +27,27 @@ function ComponentSubmit() {
                 onChange={(event)=>setinputData(event.target.value)}
                 />
 
-                <i className='fa fa-plus add-btn'onClick={()=>dispatch(addTodo(inputData),setinputData(''))}></i> 
+                <i className='fa fa-plus add-btn' onClick={()=>dispatch(addTodo(inputData),setinputData(''))}></i> 
                 {/* <button onClick={()=>dispatch(addTodo(inputData),setinputData(''))}>submit</button> */}
                 {/* <ComponentDelete inputData={inputData} /> */}
             </div>
             <div className="showItems">
                 {
                     list.map((elem)=>{
+                        { editTodo === elem.id ? (<input 
+                            type="text" 
+                            onChange={(e)=>setinputData(e.target.value)} value={inputData}/>)
+                            
+ : (elem.data) }
                         return(
                             <div className="eachItem" key={elem.id}>
                                 <h3>{elem.data}</h3>
+                                
                                 <div className="todo-btn">
+                                     {/* <button onClick={()=>setTodoEditing(elem.id)}>edit</button> */}
                                     <button onClick={()=>dispatch(editTodo(elem.id))}>edit</button>
                                     {/* <EditTodoComponent inputData={inputData} elemid={elem.id}/> */}
-                                    <button onClick={()=>dispatch(deleteTodo(elem.id))} >delete</button>
+                                    <button onClick={()=>dispatch(deleteTodo(elem.id))}>delete</button>
                                 </div>
                             </div>
                         );
@@ -47,4 +59,4 @@ function ComponentSubmit() {
     );
 }
 
-export default ComponentSubmit;
+export default  ComponentSubmit;

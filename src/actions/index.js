@@ -22,9 +22,7 @@ export  const editTodo = (data) =>{
     return {
         type:"EDIT_TODO",
         payload:{
-            id: new Date().getTime().toString(),
-            data:data
-            
+            id:data
         }
     }
 }

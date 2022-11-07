@@ -1,6 +1,6 @@
 const initialData = {
     list : [],
-    text:''
+    text:'',
 }
 
 const todoReducers = (state=initialData, action) =>{
@@ -34,12 +34,11 @@ const todoReducers = (state=initialData, action) =>{
         list
     }
 
-    break;
+    
 
     case "EDIT_TODO":
         
         const text = state.list.filter((elem) => elem.id !== action.id)
-
         return{
             ...state,
             text
